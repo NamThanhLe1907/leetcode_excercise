@@ -20,7 +20,7 @@ class pos():
 
 
 class Solution(object):
-    def hasCycle(self, head, p):
+    def run(self, head, p):
         loop_node = None
         for i in range(len(head)):
             number = node(head[i])
@@ -47,4 +47,4 @@ if __name__ == '__main__':
     head = [3, 2, 0, -4]
     p = 1
     g = Solution()
-    g.hasCycle(head, p)
+    g.run(head, p)

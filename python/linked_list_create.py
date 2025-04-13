@@ -10,6 +10,16 @@ class node():
         self.data = data
         self.next = None
 
+def create_linked_list(arr):
+    if not arr:
+        return None
+    head = node(arr[0])
+    current = head
+    for value in arr[1:]:
+        current.next = node(value)
+        current = current.next
+    return head  
+
 
 class pos():
     def __init__(self, node):
@@ -44,7 +54,22 @@ class Solution(object):
 
 
 if __name__ == '__main__':
-    head = [3, 2, 0, -4]
-    p = 1
-    g = Solution()
-    g.run(head, p)
+    # Tạo list chung từ 7 -> 8 -> 9
+    common = create_linked_list([7, 8, 9])
+
+    # Tạo listA: 3 -> 4 -> 1 -> common
+    headA = create_linked_list([3, 4, 1])
+    temp = headA
+    while temp.next:
+        temp = temp.next
+    temp.next = common  # Nối vô node chung
+
+    # Tạo listB: 1 -> 2 -> 3 -> 1 -> common
+    headB = create_linked_list([1, 2, 3, 1])
+    temp = headB
+    while temp.next:
+        temp = temp.next
+    temp.next = common  # Nối vô node chung
+
+    r = Solution()
+    r.run(headA, 1)

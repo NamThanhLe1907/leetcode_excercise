@@ -9,8 +9,6 @@ struct Node{
     {
         data = val;
         next = nullptr;
-
-
     }
 };
 
@@ -25,8 +23,6 @@ public:
         Node *newnode = new Node(x);
         newnode-> next = head;
         head = newnode;
-
-        
     }
     int _get_length(Node *head){
         int length = 0;
@@ -65,11 +61,7 @@ public:
         return 0;
              
         }
-
-                
-        
     }
-
 
     ~LinkedList(){
         Node *temp;
@@ -78,7 +70,5 @@ public:
             head = temp->next;
             delete temp;
         }
-
     }
-
 };

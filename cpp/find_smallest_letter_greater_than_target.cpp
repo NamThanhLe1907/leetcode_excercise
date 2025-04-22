@@ -16,6 +16,7 @@ public:
             else{
                 right = mid - 1;
             }
+        }
         if (left == letters.size()){
             return letters[0];
         }
@@ -23,7 +24,7 @@ public:
             return letters[left];
         }
         }
-    }
+    
 };
 
 int main() {
